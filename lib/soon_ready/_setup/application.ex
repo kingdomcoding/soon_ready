@@ -47,8 +47,8 @@ defmodule SoonReady.Application do
       SoonReady.SurveyManagement.Supervisor,
       SoonReady.IdentityAndAccessManagement.Supervisor,
 
-      SoonReadyInterface.Respondents.Setup.Supervisor,
-      SoonReadyInterface.Researcher.Supervisor,
+      # SoonReadyInterface.Respondents.Setup.Supervisor,
+      # SoonReadyInterface.Researcher.Supervisor,
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

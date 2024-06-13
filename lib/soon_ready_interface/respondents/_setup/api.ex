@@ -1,8 +1,8 @@
-defmodule SoonReadyInterface.Respondents.Setup.Api do
-  use Ash.Api
+# defmodule SoonReadyInterface.Respondents.Setup.Api do
+#   use Ash.Api
 
-  resources do
-    resource SoonReadyInterface.Respondents.ReadModels.Survey
-  end
+#   resources do
+#     resource SoonReadyInterface.Respondents.ReadModels.Survey
+#   end
 
-end
+# end

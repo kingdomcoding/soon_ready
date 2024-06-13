@@ -1,7 +1,7 @@
-defmodule SoonReadyInterface.Researcher.Api do
-  use Ash.Api
+# defmodule SoonReadyInterface.Researcher.Api do
+#   use Ash.Api
 
-  resources do
+#   resources do
 
-  end
-end
+#   end
+# end

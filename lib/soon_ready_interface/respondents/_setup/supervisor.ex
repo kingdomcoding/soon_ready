@@ -1,16 +1,16 @@
-defmodule SoonReadyInterface.Respondents.Setup.Supervisor do
-  use Supervisor
+# defmodule SoonReadyInterface.Respondents.Setup.Supervisor do
+#   use Supervisor
 
-  def start_link(arg) do
-    Supervisor.start_link(__MODULE__, arg, name: __MODULE__)
-  end
+#   def start_link(arg) do
+#     Supervisor.start_link(__MODULE__, arg, name: __MODULE__)
+#   end
 
-  @impl true
-  def init(_arg) do
-    children = [
-      SoonReadyInterface.Respondents.ReadModels.Survey,
-    ]
+#   @impl true
+#   def init(_arg) do
+#     children = [
+#       SoonReadyInterface.Respondents.ReadModels.Survey,
+#     ]
 
-    Supervisor.init(children, strategy: :one_for_one)
-  end
-end
+#     Supervisor.init(children, strategy: :one_for_one)
+#   end
+# end
