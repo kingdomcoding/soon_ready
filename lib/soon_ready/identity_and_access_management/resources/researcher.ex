@@ -3,11 +3,6 @@ defmodule SoonReady.IdentityAndAccessManagement.Resources.Researcher do
     domain: SoonReady.IdentityAndAccessManagement,
     data_layer: AshPostgres.DataLayer
 
-  use Commanded.Event.Handler,
-    application: SoonReady.Application,
-    name: __MODULE__,
-    consistency: Application.get_env(:soon_ready, :consistency, :eventual)
-
   alias SoonReady.IdentityAndAccessManagement.DomainEvents.ResearcherRegistrationSucceededV1
 
   attributes do
@@ -43,11 +38,5 @@ defmodule SoonReady.IdentityAndAccessManagement.Resources.Researcher do
   postgres do
     repo SoonReady.Repo
     table "identity_and_access_management__resources__researchers"
-  end
-
-  def handle(%ResearcherRegistrationSucceededV1{researcher_id: researcher_id, user_id: user_id} = event, _metadata) do
-    with {:ok, _active_odi_survey} <- __MODULE__.create(%{id: researcher_id, user_id: user_id}) do
-      :ok
-    end
   end
 end

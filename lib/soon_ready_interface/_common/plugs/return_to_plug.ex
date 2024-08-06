@@ -6,13 +6,6 @@ defmodule SoonReadyInterface.Common.Plugs.ReturnToPlug do
   def init(default), do: default
 
   def call(conn, _default) do
-    IO.puts("""
-    Verb: #{inspect(conn.method)}
-    Host: #{inspect(conn.query_string)}
-    Headers: #{inspect(conn.request_path)}
-    session: #{inspect(get_session(conn))}
-    """)
-
     conn.request_path
     |> is_invalid_return_to()
     |> if do

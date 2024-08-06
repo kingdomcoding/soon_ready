@@ -45,6 +45,10 @@ defmodule SoonReady.IdentityAndAccessManagement.Resources.User do
     read :get do
       get_by [:id]
     end
+
+    destroy :delete do
+      change set_context(%{private: %{ash_authentication?: true}})
+    end
   end
 
   authentication do
@@ -76,6 +80,7 @@ defmodule SoonReady.IdentityAndAccessManagement.Resources.User do
   code_interface do
     define :get, args: [:id]
     define :read
+    define :delete
   end
 
   policies do

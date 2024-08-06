@@ -55,11 +55,10 @@ defmodule SoonReadyInterface.Router do
     live "/survey/participate/:survey_id/pages/:page_id", SurveyParticipationLive
   end
 
-  scope "/" do
-    # Pipe it through your browser pipeline
-    pipe_through [:browser]
+  scope "/secret-admin", SoonReadyInterface.Admin.Webpages do
+    pipe_through :browser
 
-    ash_admin "/secret-admin"
+    live "register-researcher", ResearcherRegistrationLive
   end
 
 

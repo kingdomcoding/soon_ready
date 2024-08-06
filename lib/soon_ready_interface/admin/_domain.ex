@@ -6,6 +6,6 @@ defmodule SoonReadyInterface.Admin.Domain do
   end
 
   resources do
-    resource SoonReadyInterface.Admin.Webpages.RegisterResearcherForm
+
   end
 end

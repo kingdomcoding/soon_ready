@@ -8,8 +8,7 @@ defmodule SoonReady.IdentityAndAccessManagement.Supervisor do
   @impl true
   def init(_arg) do
     children = [
-      SoonReady.IdentityAndAccessManagement.Researcher,
-      SoonReady.IdentityAndAccessManagement.Resources.Researcher,
+
     ]
 
     Supervisor.init(children, strategy: :one_for_one)
